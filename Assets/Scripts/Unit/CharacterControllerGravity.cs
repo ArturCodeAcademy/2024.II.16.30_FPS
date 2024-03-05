@@ -43,6 +43,9 @@ public class CharacterControllerGravity : MonoBehaviour
 			VerticalVelocity = 0f;
 		}
 
+		if (collision.HasFlag(CollisionFlags.Above))
+            VerticalVelocity = 0f;
+
 		VerticalVelocity += Physics.gravity.y * _gravityScale * Time.fixedDeltaTime;
 		VerticalVelocity = Mathf.Max(VerticalVelocity, _minVerticalVelocity);
 	}
