@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [field: SerializeField] public LayerMask PlayerLayerMask;
 
     [field: Header("Components")]
+    [field: SerializeField] public Camera Camera { get; private set; }
     [field: SerializeField] public CharacterController CharacterController { get; private set; }
     [field: SerializeField] public CharacterControllerGravity CharacterControllerGravity { get; private set; }
     [field: SerializeField] public Health Health { get; private set; }
