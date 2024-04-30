@@ -1,0 +1,11 @@
+[Leason: 12] Today tasks/Backlog
+	Download 3D models
+		*From Unity asset store
+		*3rd party website
+	Setup 3D models
+		*Check if Good import (check if there is pink shaders/materials)
+		*Create prefab or its variants
+		*Add collider
+		[Optional: Optimization]Clean up
+			Merge multiple mesh renderers into one
+	*Place some of them in 3D space
