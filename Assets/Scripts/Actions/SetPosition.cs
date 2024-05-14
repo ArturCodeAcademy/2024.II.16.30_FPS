@@ -13,6 +13,12 @@ public class SetPosition : MonoBehaviour
 		transform.position = Vector3.Lerp(start, end, progress);
 	}
 
+	private void GetStartAndEnd(out Vector3 start, out Vector3 end)
+	{
+		start = _local ? transform?.parent?.TransformPoint(_start) ?? _start : _start;
+		end = _local ? transform?.parent?.TransformPoint(_end) ?? _end : _end;
+	}
+
 #if UNITY_EDITOR
 
 	private void OnDrawGizmosSelected()
@@ -25,12 +31,6 @@ public class SetPosition : MonoBehaviour
 		Gizmos.DrawSphere(start, 0.1f);
 		Gizmos.color = Color.red;
 		Gizmos.DrawSphere(end, 0.1f);
-	}
-
-	private void GetStartAndEnd(out Vector3 start, out Vector3 end)
-	{
-		start = _local ? transform?.parent?.TransformPoint(_start) ?? _start : _start;
-		end = _local ? transform?.parent?.TransformPoint(_end) ?? _end : _end;
 	}
 
 #endif
