@@ -14,7 +14,8 @@ public class HealthLongInteractable : MonoBehaviour, ILongInteractable
 	public event Action<float> ProgressChanged;
 
 	public float Progress => 1 - _currentHealthAmount / _beginHealthAmount;
-	public bool Active => true;
+	[field: SerializeField]
+	public bool Active { get; private set; } = true;
 
 	[SerializeField] private UnityEvent _healthEnded;
 
@@ -30,6 +31,11 @@ public class HealthLongInteractable : MonoBehaviour, ILongInteractable
 	private void Start()
 	{
 		_playerHealth = Player.Instance.Health;
+	}
+
+	public void SetActive(bool active)
+	{
+		Active = active;
 	}
 
 	public void Interact()
